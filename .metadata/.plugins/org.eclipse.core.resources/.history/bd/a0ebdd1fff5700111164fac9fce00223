@@ -1,0 +1,47 @@
+package odbcJdbc;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+public class Test {
+
+
+	
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Connection ct = null;
+		PreparedStatement ps = null;
+		
+		try{
+			
+			Class.forName("sun.jdbc.odbc.JdbcOdbcDriver");
+			
+			ct = DriverManager.getConnection("jdbc:odbc:mytest");
+			ps = ct.prepareStatement("create database xxx");
+			
+			boolean b = ps.execute();
+			System.out.println(b);
+			
+		} catch(Exception e) {
+			
+			e.printStackTrace();
+		} finally {
+			try {
+				
+				if(ps!=null) ps.close();
+				if(ct!=null) ct.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		
+		
+		
+	}
+}

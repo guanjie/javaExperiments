@@ -1,0 +1,10 @@
+package studentSystemModel2_DAO;
+
+
+/*
+ * 对数据库进行操作的类
+ */
+public class SqlHelper {
+
+	
+}

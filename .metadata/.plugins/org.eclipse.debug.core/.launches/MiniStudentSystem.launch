@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="org.eclipse.jdt.launching.localJavaApplication">
+<listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
+<listEntry value="/SudentSystemNew_Model1and2/src/studentSystemModel2/MiniStudentSystem.java"/>
+</listAttribute>
+<listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_TYPES">
+<listEntry value="1"/>
+</listAttribute>
+<stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="studentSystemModel2.MiniStudentSystem"/>
+<stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="SudentSystemNew_Model1and2"/>
+</launchConfiguration>

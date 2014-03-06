@@ -1,0 +1,23 @@
+#Wed Feb 15 20:36:28 PST 2012
+eclipse.preferences.version=1
+encoding//src/odbcJdbc/Test1.java=UTF-8
+encoding//src/odbcJdbc/Testing.java=UTF-8
+encoding//src/studentSystem/MiniStudentSystem.java=UTF-8
+encoding//src/studentSystem/StuAddDialog.java=UTF-8
+encoding//src/studentSystem/StuModel.java=UTF-8
+encoding//src/studentSystem/StuUpdDialog.java=UTF-8
+encoding//src/studentSystemModel2/MiniStudentSystem.java=UTF-8
+encoding//src/studentSystemModel2/StuUpdDialog.java=UTF-8
+encoding//src/studentSystem_1_table/MiniStudentSystem11350215.java=UTF-8
+encoding//src/studentSystem_2_Search/MiniStudentSystem.java=UTF-8
+encoding//src/studentSystem_2_Search/StuModel.java=UTF-8
+encoding//src/studentSystem_3_Add/MiniStudentSystem.java=UTF-8
+encoding//src/studentSystem_3_Add/StuAddDialog.java=UTF-8
+encoding//src/studentSystem_3_Add/StuModel.java=UTF-8
+encoding//src/studentSystem_4_Delete/MiniStudentSystem.java=UTF-8
+encoding//src/studentSystem_4_Delete/StuAddDialog.java=UTF-8
+encoding//src/studentSystem_4_Delete/StuModel.java=UTF-8
+encoding//src/studentSystem_5_Modify/MiniStudentSystem.java=UTF-8
+encoding//src/studentSystem_5_Modify/StuAddDialog.java=UTF-8
+encoding//src/studentSystem_5_Modify/StuModel.java=UTF-8
+encoding//src/studentSystem_5_Modify/StuUpdDialog.java=UTF-8

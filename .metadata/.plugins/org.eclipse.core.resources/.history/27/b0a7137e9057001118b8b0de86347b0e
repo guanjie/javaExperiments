@@ -1,0 +1,29 @@
+package jdbc_64_66;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+
+public class Test2 {
+
+	
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Connection ct = null;
+		PreparedStatement ps = null;
+		ResultSet rs = null;
+		
+		try {
+		
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	}
+
+}

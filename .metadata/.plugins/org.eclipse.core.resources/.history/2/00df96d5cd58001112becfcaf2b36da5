@@ -1,0 +1,55 @@
+package studentSystemModel2_DAO;
+
+import java.sql.DriverManager;
+import java.sql.SQLException;
+
+
+/*
+ * 对数据库进行操作的类
+ */
+public class SqlHelper {
+
+	
+	public boolean updateExecute(String sql){
+		
+		boolean b = true;
+		
+		try {
+			Class.forName("sun.jdbc.odbc.JdbcOdbcDriver");
+			//2.得到连接： 连接到哪个数�?��?
+			ct = DriverManager.getConnection("jdbc:odbc:mytest");
+			//3.Statement:
+			ps = ct.prepareStatement(sql);
+		
+			for(int i = 0; i < paras.length; i++){
+				
+				ps.setString(i+1, paras[i]);//i+1,赋值是从1开始的.
+			}
+			
+			if(ps.executeUpdate()!=1){
+				b = false;
+			}
+			
+
+		} catch (ClassNotFoundException e) {
+			b = false;
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+
+			try {
+				if(ps!=null) ps.close();
+				if(ct!=null) ct.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		
+		return b;
+	}
+	
+}

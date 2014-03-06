@@ -1,0 +1,21 @@
+package fanXing_YiChang_25_26;
+
+import java.io.FileReader;
+
+public class Test3 {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+//		FileReader fr = new FileReader("d:\\aa.text");
+		
+		
+		//2. connecting a socket from 192.168.12.12 ip's socket: 
+		
+		
+	}
+
+}

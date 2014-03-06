@@ -1,0 +1,21 @@
+package chapter16;
+
+public class Chapter16s {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		System.out.println("This is the Chapter 16: Threads and Locks: ");
+		
+		//Question 1:
+		System.out.println("What is the difference between a thread and a process: ");
+		
+		
+		
+		
+		
+	}
+}

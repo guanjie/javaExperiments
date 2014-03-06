@@ -1,0 +1,96 @@
+package studentSystem;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.Vector;
+
+import javax.swing.JFrame;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+
+public class Test2 extends JFrame{
+
+	
+	Vector rowData, columnNames;
+	JTable jt = null;
+	JScrollPane jsp = null;
+	
+	//定义连接数据库的东西：
+	PreparedStatement ps = null;
+	Connection ct = null;
+	ResultSet rs = null;
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		
+	
+		
+		
+		
+		
+		
+		
+	}
+	
+	public Test2(){
+		columnNames = new Vector();
+		
+		columnNames.add("ID");
+		columnNames.add("Name");
+		columnNames.add("Sex");
+		columnNames.add("Age");
+		columnNames.add("JiGuan");
+		columnNames.add("Majoe");
+		
+		rowData = new Vector();
+		
+		
+		try {
+			Class.forName("sun.jdbc.odbc.JdbcOdbcDriver");
+			//2.得到连接： 连接到哪个数�?��?
+			ct = DriverManager.getConnection("jdbc:odbc:mytest");
+			//3.Statement:
+			ps = ct.prepareStatement("select * from stu");
+			//4.Run:
+			rs = ps.executeQuery();
+			
+			while(rs.next()){
+				Vector hang = new Vector();
+				hang.add(rs.getString(1));
+				hang.add(rs.getString(2));
+				hang.add(rs.getString(3));
+				hang.add(rs.getInt(4));
+				hang.add(rs.getString(5));
+				hang.add(rs.getString(6));
+				
+				rowData.add(hang);
+			}
+			
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			
+			try {
+				if(rs!=null) rs.close();
+				if(ps!=null) ps.close();
+				if(ct!=null) ct.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+		}
+		
+	}
+
+}

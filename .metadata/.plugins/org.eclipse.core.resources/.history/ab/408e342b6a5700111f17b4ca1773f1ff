@@ -1,0 +1,25 @@
+package jdbc_64_66;
+
+public class Test1 {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		try{
+			//必须有这句，把驱动加入到程序里面
+			Class.forName("sun.jdbc.odbc.JdbcOdbcDriver");
+			
+		} catch(Exception e) {
+			e.printStackTrace();
+		} finally {
+			
+		}
+		
+		
+		
+	}
+
+}

@@ -1,0 +1,68 @@
+package studentSystem;
+
+import java.util.Vector;
+
+import javax.swing.JFrame;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+
+public class Test1 extends JFrame {
+
+	
+	Vector rowData;
+	Vector columnNames;
+	JTable jt = null;
+	JScrollPane jsp = null;
+	
+	//定义数据库的时候需要的：
+	PreparedStatement ps = null;
+	Connection ct = null;
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Test1 test = new Test1();
+	
+	}
+	
+	public Test1(){
+		columnNames = new Vector();
+		columnNames.add("学号:");
+		columnNames.add("姓名:");
+		columnNames.add("性别:");
+		columnNames.add("年龄:");
+		columnNames.add("爱好:");
+		
+		rowData = new Vector();
+//		Vector hang1 = new Vector();
+//		hang1.add("001");
+//		hang1.add("孙悟空");
+//		hang1.add("男");
+//		hang1.add("500");
+//		hang1.add("吃桃子");
+		
+		try{//连接数据库的时候
+			Class.forName("com.microsoft.jdbc.sqlserver.SQLServerDriver");
+		}catch(Exception e){
+			
+		}finally{
+			
+		}
+		
+		rowData.add(hang1);
+		
+		jt = new JTable(rowData, columnNames);
+		
+		jsp = new JScrollPane(jt);
+		
+		this.add(jsp);
+		
+		this.setSize(1900, 600);
+		
+		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
+		this.setVisible(true);
+		
+	}
+}

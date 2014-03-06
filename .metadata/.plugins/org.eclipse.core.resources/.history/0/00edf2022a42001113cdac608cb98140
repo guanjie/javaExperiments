@@ -1,0 +1,25 @@
+package chapter16;
+
+public class Chapter16s {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		System.out.println("This is the Chapter 16: Threads and Locks: ");
+		
+		//Question 1:
+		System.out.println("What is the difference between a thread and a process: ");
+		System.out.println("A process may contain many threads, ");
+		System.out.println("Processes: Processes are independent executions, they are allocated the space and memory, and if processes need to interact with data from other processes they need to use inter-process communications. ");
+		System.out.println("Threads: Thread uses the same stack space of a process, multiple threads share parts of their states. Multiple threads can modify, read/write the stack memory.");
+		System.out.println("When a thread modifies a process resource, the change is immediately visible to other threads.");
+		
+		
+		
+		
+		
+	}
+}

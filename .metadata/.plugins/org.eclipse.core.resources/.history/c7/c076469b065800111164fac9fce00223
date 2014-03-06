@@ -1,0 +1,48 @@
+package studentSystem;
+
+import java.util.Vector;
+
+import javax.swing.JFrame;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+
+public class Test2 extends JFrame{
+
+	
+	Vector rowData, columnNames.add("Name");
+	JTable jt = null;
+	JScrollPane jsp = null;
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		
+	
+		
+		
+		
+		
+		
+		
+	}
+	
+	public Test2(){
+		columnNames = new Vector();
+		
+		columnNames.add("ID");
+		columnNames.add("Name");
+		columnNames.add("Sex");
+		columnNames.add("Age");
+		columnNames.add("JiGuan");
+		columnNames.add("Majoe");
+		
+		rowData = new Vector();
+		
+		Vector hang = new Vector();
+		
+		rowData.add(hang);
+	}
+
+}

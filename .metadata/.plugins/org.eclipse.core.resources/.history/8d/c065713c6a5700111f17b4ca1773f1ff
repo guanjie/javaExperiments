@@ -1,0 +1,30 @@
+package jdbc_64_66;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+
+public class Test1 {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		try{
+			//1.必须有这句，把驱动加入到程序里面
+			Class.forName("sun.jdbc.odbc.JdbcOdbcDriver");
+			//2.得到连接： 连接到哪个数据源
+			Connection ct = DriverManager.getConnection("jdbc:odbc:mytest");
+			
+			
+		} catch(Exception e) {
+			
+			e.printStackTrace();
+		} finally {
+			
+		}
+		
+	}
+
+}

@@ -1,0 +1,51 @@
+package chapter16;
+
+public class Q3 {
+
+}
+
+public class Chopstick{
+	private lock;
+	
+	public void pickUp(){
+		
+	}
+	
+	public void putDown(){
+		
+	}
+	
+}
+
+public class Philosopher extends Thread{
+	
+	private Chopstick left;
+	private Chopstick right;
+	
+	public Philosopher(Chopstick left, Chopstick right){
+		this.left = left;
+		this.right = right;
+	}
+	
+	public void eat(){
+		pickUp();
+		eat();
+		putDown();
+	}
+	
+	public void pickUp(){
+		left.pickUp();
+		right.pickUp();
+	}
+	
+	public void putDown(){
+		left.putDown();
+		right.putDown();
+	}
+	
+	public void run(){
+		for(int i = 0; i < 10; i++)
+			eat();
+	}
+	
+}

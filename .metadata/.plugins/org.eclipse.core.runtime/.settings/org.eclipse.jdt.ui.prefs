@@ -1,0 +1,36 @@
+#Tue Jan 17 19:00:15 PST 2012
+sourceHoverBackgroundColor=128,0,255
+content_assist_proposals_foreground=0,0,0
+spelling_locale_initialized=true
+spelling_ignore_urls=true
+org.eclipse.jdt.quickassist.lightbulb=true
+spelling_ignore_non_letters=true
+org.eclipse.jdt.ui.text.templates_migrated=true
+spelling_ignore_ampersand_in_properties=true
+useAnnotationsPrefPage=true
+eclipse.preferences.version=1
+org.eclipse.jface.textfont=1|Courier New|10.0|0|WINDOWS|1|0|0|0|0|0|0|0|0|1|0|0|0|0|Courier New;
+tabWidthPropagated=true
+content_assist_parameters_background=255,255,128
+org.eclipse.jdt.ui.editor.tab.width=
+spelling_ignore_single_letters=true
+fontPropagated=true
+org.eclipse.jdt.ui.text.custom_code_templates=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?><templates/>
+org.eclipse.jdt.ui.javadoclocations.migrated=true
+proposalOrderMigrated=true
+spelling_user_dictionary_encoding=
+spelling_ignore_mixed=true
+content_assist_parameters_foreground=255,255,0
+spelling_ignore_java_strings=true
+org.eclipse.jdt.ui.formatterprofiles.version=11
+content_assist_proposals_background=255,255,255
+content_assist_number_of_computers=13
+sourceHoverBackgroundColor.SystemDefault=false
+spelling_ignore_digits=true
+matchingBracketsColor=255,0,128
+spelling_ignore_upper=true
+useQuickDiffPrefPage=true
+org.eclipse.jdt.ui.text.custom_templates=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?><templates/>
+content_assist_lru_history=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?><history maxLHS\="100" maxRHS\="10"><lhs name\="chapter14.General$Square"><rhs name\="chapter14.General$Square"/></lhs><lhs name\="chapter14.General$Shape"><rhs name\="chapter14.General$Circle"/><rhs name\="chapter14.General$Square"/></lhs><lhs name\="chapter14.General$Circle"><rhs name\="chapter14.General$Circle"/></lhs></history>
+spelling_ignore_sentence=true
+org.eclipse.jdt.ui.text.code_templates_migrated=true

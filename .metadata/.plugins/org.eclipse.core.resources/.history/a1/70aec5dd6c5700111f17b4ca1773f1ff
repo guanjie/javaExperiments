@@ -1,0 +1,47 @@
+package jdbc_64_66;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+public class Test1 {
+
+
+	
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Connection ct = null;
+		Statement sm = null;
+		
+		try{
+			//1.必须有这句，把驱动加入到程序里面
+			Class.forName("sun.jdbc.odbc.JdbcOdbcDriver");
+			//2.得到连接： 连接到哪个数据源
+			ct = DriverManager.getConnection("jdbc:odbc:mytest");
+			//3.Statement:
+			sm = ct.createStatement();
+			//4.Run:
+			int i = sm.executeUpdate("insert into stu1 values('sp006','harvey','M',24，'CUHK','CUHK'),");
+			if(i!=1){
+				System.out.println("Updated took place");
+			}
+		} catch(Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				//为了程序更健壮，加两句话： 
+				if(sm!=null) sm.close();
+				if(ct!=null) ct.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		
+	}
+
+}

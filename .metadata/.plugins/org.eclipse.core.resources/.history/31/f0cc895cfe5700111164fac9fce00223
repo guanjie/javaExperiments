@@ -1,0 +1,57 @@
+package odbc_jdbc_64_66_Works_RefreshError;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+public class Test1 {
+
+
+	
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Connection ct = null;
+		PreparedStatement ps = null;
+		
+		try{//�?��?用preparedStatement
+			//1.必须有这�?�，把驱动加入到程�?里�?�
+			Class.forName("sun.jdbc.odbc.JdbcOdbcDriver");
+			//2.得到连接： 连接到哪个数�?��?
+			ct = DriverManager.getConnection("jdbc:odbc:mytest");
+			//3.Statement:
+			ps = ct.prepareStatement("create database xxx");
+			
+			
+			//4.Run:
+//			int i = sm.executeUpdate("");
+//			
+//			if(i!=1){
+//				System.out.println("Updated took place");
+//			}
+			
+			boolean b = ps.execute();
+			System.out.println(b);
+			
+		} catch(Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				//为了程�?更�?�壮，加两�?��?： 
+				if(sm!=null) sm.close();
+				if(ct!=null) ct.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		
+		
+		
+	}
+}

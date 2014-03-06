@@ -1,0 +1,145 @@
+package studentSystemModel2;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.Vector;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+import javax.swing.JTextField;
+
+
+/*
+ * 1. Adding
+ * 2. Deleting
+ * 3. Modifying
+ * could be encapsulate in here.
+ * 
+ */
+public class MiniStudentSystem extends JFrame implements ActionListener{
+
+	JPanel jPanel1, jPanel2;
+	JLabel jLabel1;
+	JButton jButton1, jButton2, jButton3, jButton4;
+	JTable jTable;
+	JScrollPane jScrollPane;
+	JTextField jTextField;
+	
+	StuModel sm = null;
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		MiniStudentSystem mini = new MiniStudentSystem();
+	}
+	
+	public MiniStudentSystem(){
+		jPanel1 = new JPanel();
+		jTextField = new JTextField(10);
+		jButton1 = new JButton("Search");
+		jButton1.addActionListener(this);
+		jLabel1 = new JLabel("Please enter name");
+		
+		//Put everything into jsp:
+		jPanel1.add(jLabel1);
+		jPanel1.add(jTextField);
+		jPanel1.add(jButton1);
+		
+		jPanel2 = new JPanel();
+
+		jButton2 = new JButton("add");
+		jButton2.addActionListener(this);
+		jButton3 = new JButton("modify");
+		jButton3.addActionListener(this);
+		jButton4 = new JButton("delete");
+		jButton4.addActionListener(this);
+		
+		jPanel2.add(jButton2);
+		jPanel2.add(jButton3);
+		jPanel2.add(jButton4);
+		
+		//创建instance from StuModel
+		sm = new StuModel();
+		
+
+		//建立table并且显示在JFRAME里面：
+		jTable = new JTable(sm);
+		jScrollPane = new JScrollPane(jTable);
+		this.add(jScrollPane);
+		this.add(jPanel1, "North");
+		this.add(jPanel2, "South");
+
+		this.setSize(600,400);
+		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		this.setVisible(true);
+		//--------------------------------//
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent arg0) {
+		// TODO Auto-generated method stub
+		if(arg0.getSource()==jButton1){//Search
+			System.out.println("Clients wants to search");	
+			String name = this.jTextField.getText().trim();
+
+			String sql = "select * from stu where stuName = '"+name+"'";
+			//构建新的数据模型并更新：
+			sm = new StuModel(sql);
+			jTable.setModel(sm);
+		}
+		
+		else if(arg0.getSource()==jButton2){//Add
+			StuAddDialog sa = new StuAddDialog(this, "Add Person", true);
+			//restart the model to show the newer information.
+			sm = new StuModel();
+			jTable.setModel(sm);
+		}
+
+		else if(arg0.getSource()==jButton3){//Modification
+			int rowNum = this.jTable.getSelectedRow();
+			if(rowNum==-1){
+				JOptionPane.showMessageDialog(this, "Please select one row");
+				return;
+			}
+			StuUpdDialog sup = new StuUpdDialog(this, "Modification",true, sm, rowNum);
+			
+			sm = new StuModel();
+			jTable.setModel(sm);
+		}
+
+
+		else if(arg0.getSource()==jButton4){//Delete
+			int rowNum = this.jTable.getSelectedRow();
+			if(rowNum==-1){
+				JOptionPane.showMessageDialog(this, "Please select one row");
+				return;
+			} else {//标号是正确的
+				String ID = (String) sm.getValueAt(rowNum, 0);
+
+				String sql = "delete from stu where stuID=?";
+				
+				String[] paras = {ID};
+				
+				StuModel temp = new StuModel();
+				temp.updateStu(sql, paras);
+				
+				sm = new StuModel();
+				jTable.setModel(sm);
+
+			}
+		}
+	}
+}
+
+

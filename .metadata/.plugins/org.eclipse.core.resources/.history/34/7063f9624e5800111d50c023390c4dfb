@@ -1,0 +1,9 @@
+package studentSystem;
+
+/*
+ * modify the students
+ * 
+ */
+public class StuUpdDialog {
+
+}
